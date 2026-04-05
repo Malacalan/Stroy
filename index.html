@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>СтройГлэмп | Строительство домов и глэмпингов под ключ</title>
+    <!-- Google Fonts & Simple Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a2c2e;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1E5F4B, #2C9B6E);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            color: #D4AF37;
+            background: none;
+            -webkit-background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1f3e3b;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2C9B6E;
+        }
+
+        .btn-outline {
+            border: 2px solid #2C9B6E;
+            background: transparent;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #1E5F4B;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #2C9B6E;
+            color: white;
+        }
+
+        /* hero */
+        .hero {
+            padding: 60px 0 80px;
+            background: linear-gradient(120deg, #F9FCF7 0%, #E9F3EF 100%);
+            border-radius: 0 0 48px 48px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            background: #D4AF3722;
+            color: #B67F33;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0E2E2A;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #2D4A46;
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+
+        .btn-primary {
+            background: #1E5F4B;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 48px;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 8px 20px rgba(30, 95, 75, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #134b3b;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            background: url('https://placehold.co/600x450/DDEFE4/2C6E5A?text=Глэмпинг+дом') center/cover no-repeat;
+            min-height: 320px;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            background-image: linear-gradient(135deg, #B7D9C5 0%, #8CC1A8 100%), url('https://placehold.co/600x450/E2F0EA/ffffff?text=Современный+дом+у+леса');
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+
+        /* services */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #1E5F4B;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #527a73;
+            max-width: 680px;
+            margin: 0 auto 48px;
+            font-size: 1.1rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 24px;
+            flex: 1 1 280px;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s;
+            border: 1px solid #e2efe9;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #9CCCB9;
+            box-shadow: 0 24px 36px -12px rgba(30, 95, 75, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: #2C9B6E;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #4f6e68;
+        }
+
+        /* проекты глэмпингов */
+        .project-showcase {
+            background: #F6FCF9;
+        }
+
+        .projects-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .project-item {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            flex: 1 1 300px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: 0.2s;
+        }
+
+        .project-img {
+            height: 220px;
+            background-color: #CBE4DA;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-info {
+            padding: 24px;
+        }
+
+        .project-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            background: #E3F2EE;
+            color: #1E5F4B;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        /* why us */
+        .features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            background: #E9F3EF;
+            padding: 20px;
+            border-radius: 60px;
+            color: #1E5F4B;
+            margin-bottom: 20px;
+        }
+
+        /* форма */
+        .contact-form-section {
+            background: linear-gradient(115deg, #1E5F4B 0%, #1A4F3F 100%);
+            color: white;
+            border-radius: 48px;
+            margin: 40px 24px;
+            padding: 48px 40px;
+        }
+
+        .form-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .form-text {
+            flex: 1;
+        }
+
+        .form-text h3 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .form-box {
+            flex: 1;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(2px);
+            padding: 32px;
+            border-radius: 32px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 32px;
+            border: none;
+            background: #fefefe;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-box button {
+            background: #D4AF37;
+            color: #1a2c2e;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-weight: 800;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .form-box button:hover {
+            background: #e6c34c;
+        }
+
+        footer {
+            background: #0A2622;
+            color: #BCD9D1;
+            padding: 48px 0 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .footer-links a {
+            color: #BCD9D1;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #D4AF37;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .contact-form-section {
+                margin: 20px 16px;
+                padding: 32px 24px;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="border-bottom: 1px solid #eef3f0;">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">Строй<span>Глэмп</span> <span style="font-size: 1rem; background: none; color:#1E5F4B;">🏕️</span></div>
+                <ul class="nav-links">
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+                <button class="btn-outline" id="callBtn">+7 (495) 123-45-67</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-tree"></i> Строим мечту на природе</div>
+                    <h1>Дома и глэмпинги<br>под ключ с душой</h1>
+                    <p>Современные эко-технологии, авторский дизайн и полная готовность «живи и отдыхай». От уютных шале до премиальных глэмпингов.</p>
+                    <button class="btn-primary" id="openFormBtn">Рассчитать стоимость</button>
+                </div>
+                <div class="hero-image" style="background-image: url('https://placehold.co/600x450/DEF5EA/2B7A62?text=Глэмпинг+с+панорамой'); background-size: cover; background-position: center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Что мы строим</h2>
+            <p class="section-sub">Полный цикл строительства: от эскиза до отделки. Работаем с деревом, стальными конструкциями и эко-материалами.</p>
+            <div class="cards-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Коттеджи</h3>
+                    <p>Кирпич, газобетон, клееный брус. Современные планировки и инженерные системы.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-campground"></i></div>
+                    <h3>Глэмпинги</h3>
+                    <p>Купола, сферы, A-frame, шатры с утеплением. Готовые решения для гостиничного бизнеса.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Дизайн & проект</h3>
+                    <p>Индивидуальная архитектура, 3D-визуализация, согласование и паспорт объекта.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Благоустройство</h3>
+                    <p>Террасы, ландшафт, зоны барбекю, бани и чан — создаём полную инфраструктуру.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="project-showcase section">
+        <div class="container">
+            <h2 class="section-title">Наши проекты глэмпингов и домов</h2>
+            <p class="section-sub">Реализованные объекты в Подмосковье, Сочи, Карелии — от эко-домиков до премиум-глэмпингов</p>
+            <div class="projects-flex">
+                <div class="project-item">
+                    <div class="project-img" style="background-image: url('https://placehold.co/400x240/C7E2D6/2C6E5A?text=Стеклянный+A-frame');"></div>
+                    <div class="project-info">
+                        <span class="tag"><i class="fas fa-star"></i> A-frame глэмпинг</span>
+                        <h4>Сосновый эко-дом</h4>
+                        <p>Панорамное остекление, печь, терраса с видом на озеро — 45м² под ключ.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img" style="background-image: url('https://placehold.co/400x240/BDD9CE/2B6E58?text=Купольный+дом');"></div>
+                    <div class="project-info">
+                        <span class="tag"><i class="fas fa-globe"></i> Геокупол</span>
+                        <h4>Смарт-глэмпинг 5*</h4>
+                        <p>Энергоэффективный купол с джакузи, автоматикой и smart-управлением.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img" style="background-image: url('https://placehold.co/400x240/DCEFE4/1F5C48?text=Дом+из+бруса');"></div>
+                    <div class="project-info">
+                        <span class="tag"><i class="fas fa-tree"></i> Классический дом</span>
+                        <h4>Шале 180м²</h4>
+                        <p>Семейный дом с камином, террасой и ландшафтным парком. Срок 5 месяцев.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features section">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>10+ лет опыта</h3>
+                    <p>Более 80 построенных домов и 25 глэмпинг-парков по всей России.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Фиксированная смета</h3>
+                    <p>Прозрачные цены, без скрытых платежей. Соблюдаем бюджет до копейки.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Сроки точно в график</h3>
+                    <p>Поэтапная сдача объекта, контроль качества на каждом этапе.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Под ключ + меблировка</h3>
+                    <p>Заезжайте сразу — полностью готовая инфраструктура и дизайн.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="contact">
+        <div class="contact-form-section">
+            <div class="form-grid">
+                <div class="form-text">
+                    <h3>Постройте дом или глэмпинг мечты</h3>
+                    <p style="margin-top: 12px;">Оставьте заявку, и наш архитектор бесплатно проконсультирует, подберёт концепцию под ваш участок и бюджет.</p>
+                    <ul style="margin-top: 24px; list-style: none;">
+                        <li><i class="fas fa-check-circle"></i> Выезд на участок и замер — 0₽</li>
+                        <li><i class="fas fa-check-circle"></i> 3 варианта планировки в подарок</li>
+                        <li><i class="fas fa-check-circle"></i> Гарантия на конструктив 5 лет</li>
+                    </ul>
+                </div>
+                <div class="form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" id="phone" placeholder="Номер телефона" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" placeholder="Какой проект вас интересует? (дом/глэмпинг, площадь...)"></textarea>
+                        </div>
+                        <button type="submit">Отправить заявку</button>
+                        <p style="font-size: 0.75rem; margin-top: 16px; text-align: center; opacity: 0.8;">Нажимая на кнопку, вы соглашаетесь с политикой обработки данных</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo" style="background: none; color:#E5EFEC; font-size: 1.8rem;">Строй<span style="color:#D4AF37;">Глэмп</span></div>
+            <div class="footer-links">
+                <a href="#">О компании</a>
+                <a href="#">Портфолио</a>
+                <a href="#">Блог</a>
+                <a href="#">Вакансии</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+            <div style="margin: 16px 0;">
+                <i class="fab fa-whatsapp" style="margin: 0 10px; font-size: 1.4rem;"></i>
+                <i class="fab fa-telegram" style="margin: 0 10px; font-size: 1.4rem;"></i>
+                <i class="fab fa-instagram" style="margin: 0 10px; font-size: 1.4rem;"></i>
+            </div>
+            <p>© 2025 СтройГлэмп — строительство домов и глэмпингов под ключ. ИНН 7701234567</p>
+        </div>
+    </footer>
+
+    <script>
+        // smooth scroll для навигации
+        document.querySelectorAll('.nav-links a, .btn-primary, .btn-outline').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // кнопка "рассчитать стоимость" скролл к форме
+        const openFormBtn = document.getElementById('openFormBtn');
+        if(openFormBtn) {
+            openFormBtn.addEventListener('click', () => {
+                const contactSection = document.getElementById('contact');
+                if(contactSection) contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+
+        // обработка отправки формы + попап уведомление (без реальной отправки на сервер)
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                if(!name || !phone) {
+                    alert("Пожалуйста, заполните имя и номер телефона");
+                    return;
+                }
+                // имитация отправки
+                const messageDiv = document.createElement('div');
+                messageDiv.textContent = "✅ Спасибо, " + name + "! Мы свяжемся с вами в ближайшее время.";
+                messageDiv.style.position = 'fixed';
+                messageDiv.style.bottom = '30px';
+                messageDiv.style.left = '50%';
+                messageDiv.style.transform = 'translateX(-50%)';
+                messageDiv.style.backgroundColor = '#1E5F4B';
+                messageDiv.style.color = 'white';
+                messageDiv.style.padding = '14px 28px';
+                messageDiv.style.borderRadius = '60px';
+                messageDiv.style.fontWeight = '600';
+                messageDiv.style.zIndex = '1000';
+                messageDiv.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+                document.body.appendChild(messageDiv);
+                setTimeout(() => { messageDiv.remove(); }, 4000);
+                contactForm.reset();
+            });
+        }
+
+        // кнопка с телефоном (демо)
+        const callBtn = document.getElementById('callBtn');
+        if(callBtn) {
+            callBtn.addEventListener('click', () => {
+                alert("Свяжитесь с нами: +7 (495) 123-45-67 или напишите в WhatsApp");
+            });
+        }
+
+        // маленький эффект: подменяем изображения для более живого контента (декор)
+        const heroImgDiv = document.querySelector('.hero-image');
+        if(heroImgDiv) {
+            // оставляем стиль как есть, но можно сменить рандомно для динамики (опционально)
+        }
+
+        // адаптивные подписи - просто декорация
+        console.log("Сайт строительной компании — Глэмпинг и дома под ключ");
+    </script>
+</body>
+</html>
